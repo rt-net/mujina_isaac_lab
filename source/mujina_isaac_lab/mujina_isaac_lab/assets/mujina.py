@@ -28,7 +28,7 @@ ROBSTRIDE02_CFG = DelayedPDActuatorCfg(
     damping={".*_collar_joint": 1.0, ".*_hip_joint": 1.0},
     armature=0.002,
     min_delay=1,  # 0.005*1 = 0.005 [s]
-    max_delay=4,  # 0.005*4 = 0.020 [s]
+    max_delay=1,  # 0.005*1 = 0.005 [s]
 )
 ROBSTRIDE02_X2_CFG = DelayedPDActuatorCfg(
     joint_names_expr=[".*_knee_joint"],
@@ -38,7 +38,7 @@ ROBSTRIDE02_X2_CFG = DelayedPDActuatorCfg(
     damping={".*_knee_joint": 1.0},
     armature=0.002,
     min_delay=1,  # 0.005*1 = 0.005 [s]
-    max_delay=4,  # 0.005*4 = 0.020 [s]
+    max_delay=1,  # 0.005*1 = 0.005 [s]
 )
 """Configuration for mujina Delayed PDActuator model."""
 
