@@ -127,6 +127,12 @@ class JointTorquesStd(ManagerTermBase):
         self.asset: Articulation = env.scene[cfg.params["asset_cfg"].name]
         self.torque_lowpass: torch.Tensor = torch.zeros(len(cfg.params["asset_cfg"].joint_ids), device=env.device)
 
+    def reset(self, env_ids: Sequence[int] | None = None):
+        if env_ids is None:
+            self.torque_lowpass.zero_()
+        else:
+            self.torque_lowpass[env_ids] = 0.0
+
     def __call__(
         self,
         env: ManagerBasedRLEnv,
